@@ -1,5 +1,35 @@
 # UIUC ENG 298 - Fall 2025  
-## Module 7: Secure Software Supply Chain with Software Bill of Materials (SBOM)
+## Module 7: Assignment: Secure Software Supply Chain with Software Bill of Materials (SBOMs)
+
+## **Assignment Overview**
+
+A **supply chain** is the network of people, processes, technologies, and organizations involved in creating and delivering a product or service, from raw materials to the end user. A **software supply chain** refers to all the components, dependencies, and tools used to build, deploy, and maintain software systems.
+
+In this lab, you will apply Security Engineering principles - open design, least privilege, **complete mediation** (every access to every resource must be checked for authorization — every time. ([Saltzer & Schroeder, 1975](https://doi.org/10.1109/PROC.1975.9939))), and defense in depth—to the software supply chain. Modern systems depend on many third-party components. Knowing what’s inside a system is essential to designing, verifying, and maintaining secure software. An SBOM provides this transparency by listing every package, library, and dependency that makes up an application or container. You will use GitHub Codespaces and open-source tools to generate, analyze, and compare SBOMs for the NG911 software repository, then reflect on how this information supports secure design and lifecycle assurance.
+
+You will use GitHub Codespaces and open-source tools to generate, analyze, and compare SBOMs for a software repository, then reflect on how this information supports secure design and lifecycle assurance.
+
+---
+
+## **Learning Objectives**
+
+You will learn to generate, analyze, and interpret both artifacts. By the end of this lab, you should be able to:
+
+- Explain how SBOMs support security-by-design and verification/validation activities.
+- Relate SBOM use to Security Engineering principles (e.g., open design, least privilege, defense in depth).
+- Generate an SBOM from a software repository using **Syft** and **Trivy**.  
+- Compare and interpret SBOM outputs in SPDX/JSON formats.  
+- Perform a vulnerability analysis using **Grype**.  
+- Interpret and document CVE findings.
+- Identify potential risks or missing information in component inventories
+
+---
+
+## **Lab Context**
+
+In the Module 7 Reading Material and lecture discussions, you explored how assurance, verification, and transparency strengthen system design and maintenance. This lab extends those principles into the **software supply chain**, where complex dependencies make it difficult to know exactly what’s running in a system. By generating and analyzing SBOMs for the **NG911** application - software that aligns with the [NENA/NG911](https://www.nena.org/page/ng911_project) standards defining the architecture and interoperability framework for Next Generation 9-1-1 systems - you’ll apply the same engineering mindset of identifying components, validating integrity, and reducing uncertainty to software, reinforcing the role of visibility as a foundation for trust.
+
+---
 
 ### **HBOM vs. SBOM Explained**
 
@@ -11,32 +41,6 @@
 | **Common Formats** | SPDX, CycloneDX, Syft JSON. | IPC-1752A, IPC-1754, or vendor-specific CSV/XML formats. |
 | **Key Users** | Developers, vulnerability managers, software assurance teams. | OEMs, supply-chain analysts, hardware security engineers. |
 | **Tagline** | *“What’s in the code.”* | *“What’s on the board.”* |
-
----
-
-## **Assignment Overview**
-
-In this lab, students will apply Security Engineering principles - open design, least privilege, **complete mediation** (every access to every resource must be checked for authorization — every time. ([Saltzer & Schroeder, 1975](https://doi.org/10.1109/PROC.1975.9939))), and defense in depth—to the software supply chain. Modern systems depend on many third-party components. Knowing what’s inside a system is essential to designing, verifying, and maintaining secure software. An SBOM provides this transparency by listing every package, library, and dependency that makes up an application or container. You will use GitHub Codespaces and open-source tools to generate, analyze, and compare SBOMs for the NG911 software repository, then reflect on how this information supports secure design and lifecycle assurance.
-
----
-
-## **Lab Context**
-
-In the Module 7 Reading Material, you explored how assurance, verification, and transparency strengthen system design and maintenance. This lab extends those principles into the **software supply chain**, where complex dependencies make it difficult to know exactly what’s running in a system. By generating and analyzing SBOMs for the **NG911** application - software that aligns with the [NENA/NG911](https://www.nena.org/page/ng911_project) standards defining the architecture and interoperability framework for Next Generation 9-1-1 systems - you’ll apply the same engineering mindset of identifying components, validating integrity, and reducing uncertainty to software, reinforcing the role of visibility as a foundation for trust.
-
----
-
-## **Assignment Objectives**
-
-Students will learn to generate, analyze, and interpret both artifacts. By the end of this lab, you should be able to:
-
-- Explain how SBOMs support security-by-design and verification/validation activities.
-- Relate SBOM use to Security Engineering principles such as open design, least privilege, and defense in depth.
-- Generate an SBOM from a software repository using **Syft** and **Trivy**.  
-- Compare and interpret SBOM outputs in SPDX/JSON formats.  
-- Perform a vulnerability analysis using **Grype**.  
-- Interpret and document CVE findings.
-- Identify potential risks or missing information in component inventories
 
 ---
 
@@ -69,11 +73,17 @@ Students will learn to generate, analyze, and interpret both artifacts. By the e
 
 ---
 
+### **Report Deliverable**
+
+Throughout this lab, you will capture your commands, screenshots, and findings in a short report (2-3 pages total). This report will compile your SBOM generation results and vulnerability analysis (top 5 CVEs). The final report, along with the required output files, will be submitted in your Codespace’s deliverables/folder and pushed to GitHub.
+
+---
+
 ## **Part 1: SBOM Generation (in Codespaces)**
 
 All commands can be executed directly inside your GitHub Codespace using this repo:
 
-👉 [https://github.com/obriencasey/eng298-fa25-mod7-sbom-lab]([https://github.com/obriencasey/cs460-fa-25-hbom-sbom-lab)
+👉 [https://github.com/obriencasey/eng298-fa25-mod7-sbom-lab](https://github.com/obriencasey/cs460-fa-25-hbom-sbom-lab)
 
 ### **Steps**
 
