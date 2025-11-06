@@ -80,14 +80,14 @@ All commands can be executed directly inside your GitHub Codespace using this re
 
 ### Syntax Breakdown
 
-**git:** This invokes the **Git** command-line tool — the version control system used to manage source code repositories.
+**git** This invokes the **Git** command-line tool — the version control system used to manage source code repositories.
 
-**clone:** Git subcommand that creates a copy of a remote repository (like one hosted on GitHub) on your local machine or Codespace. It:  
+**clone** Git subcommand that creates a copy of a remote repository (like one hosted on GitHub) on your local machine or Codespace. It:  
 1. Downloads all files and directories from the repo.  
 2. Preserves the commit history and branches.  
 3. Automatically configures a connection (called a *remote*) to the source repository.
 
-**https://github.com/tamu-edu/ng911-dev.git:** URL of the remote repository you want to clone.
+**https://github.com/tamu-edu/ng911-dev.git** URL of the remote repository you want to clone.
 
 **Let’s break that URL down further:** 
 
@@ -112,6 +112,17 @@ All commands can be executed directly inside your GitHub Codespace using this re
    ```bash
    syft . -o spdx-json > ../deliverables/sbom_syft_spdx.json
    ```
+### Syntax Breakdown
+
+**syft** Open-source command-line tool used to generate an SBOM. Scans a project or container image to identify all the packages and dependencies present
+**.** The single dot (.) means “the current directory.” Syft will analyze all files and packages in the current working directory, which is ng911-dev 
+**-o spdx-json** Program option (-o) specifying the output format. Here, spdx-json tells Syft to format the results using the SPDX (Software Package Data Exchange) standard, in JSON form.
+**>** This is a redirection operator in the Linux shell. It takes the output that would normally print to the terminal (your screen) and redirects it to a file instead
+**../deliverables/sbom_syft_spdx.json** This is the destination path and filename for the SBOM output:
+.. → Go up one directory level from your current folder
+/deliverables/ → Inside that parent directory, place the file in the deliverables folder
+sbom_syft_spdx.json → Name of the generated SBOM file
+So the full path means: “Save the SBOM JSON file one level up, inside the deliverables directory”
 
 5. **Generate a CycloneDX SBOM (Trivy):**
 
