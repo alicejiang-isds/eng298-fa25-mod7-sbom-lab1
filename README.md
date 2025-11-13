@@ -108,7 +108,7 @@ This will download the NG911 source code into your Codespace environment so you 
    ```
 | **Syntax Breakdown** | **Description**
 |---------------|------------------------|
-| **syft** | Open-source command line tool used to create an SBOM in an .spdx format
+| **syft** | Open-source command line tool used to create an SBOM
 | **.** | The *single dot* (*.*) means “*the current directory*.” Syft will analyze all files and packages in the current working directory, which is `ng911-dev` 
 | **-o spdx-json** | Output (*-o*) the results in an *SPDX JSON* format
 | **> ../deliverables/sbom_syft_spdx.json**| Standard shell redirection (*>*) that save the previous line's results in a file named *sbom_syft_spdx.json* in the `deliverables` folder, whichh is one directory level up from your current folder
