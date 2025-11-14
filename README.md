@@ -169,19 +169,20 @@ This will download the NG911 source code into your Codespace environment so you 
 | **-20** | Program option used to specify the number of lines to display — in this case, the first *20* lines of the file
 | **../deliverables/vuln_analysis_grype.txt** | The path and filename of the file you want to preview
 
-4. Copy the top 5 rows into your report table. Then select one CVE, locate it in the <b><a href="https://nvd.nist.gov">NVD Database</a></b>, and summarize its cause or impact in one sentence.
+4. Copy the top 5 rows into your report table. Then select one CVE, locate it in the <a href="https://nvd.nist.gov">NVD Database</a>, and summarize its cause or impact in one sentence.
 
 ## **Part 3: Deliverables**
 **GitHub Submission**:
 
-1. Make sure all deliverables (e.g., SBOM and Grype output files) are saved in the /deliverables folder of your Codespace, committed, and pushed to your forked GitHub repository. Double-check that your repository is public or that the instructor can access it.
+1. Make sure all deliverables (e.g., SBOM and Grype output files) are saved in the `deliverables` folder of your Codespace, committed, and pushed to your forked GitHub repository. Double-check that your repository is public or that the instructor can access it.
 2. Submit a **2–3 page report** (PDF) including:
 
 - SBOM generation results  
 - Vulnerability analysis (top 5 CVEs or rationale for zero matches)
+- Screenshots
 - Reflection on insights and process  
 
-2. Upload to `/deliverables/` and push to GitHub (use all lowercase filenames as shown below to simplify grading):
+2. Upload to `deliverables` and push to GitHub (use all lowercase filenames as shown below to simplify grading):
 
 ```
 deliverables/
